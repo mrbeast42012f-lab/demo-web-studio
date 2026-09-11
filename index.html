@@ -6,10 +6,8 @@
 
   <title>Demo Web Studio | Modern Websites</title>
 
-  <meta
-    name="description"
-    content="Demo Web Studio creates modern, fast and mobile-friendly websites for businesses."
-  >
+  <meta name="description"
+    content="Demo Web Studio creates modern, fast and mobile-friendly websites for businesses.">
 
   <style>
     * {
@@ -25,65 +23,73 @@
 
     body {
       background: #080808;
-      color: #ffffff;
+      color: #fff;
       line-height: 1.6;
     }
 
-    /* HEADER */
-
     header {
       width: 100%;
-      padding: 18px 7%;
+      padding: 14px 7%;
       display: flex;
       justify-content: space-between;
       align-items: center;
       position: sticky;
       top: 0;
       z-index: 100;
-      background: rgba(8, 8, 8, 0.96);
+      background: rgba(8,8,8,0.95);
       border-bottom: 1px solid #222;
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(12px);
     }
 
-    .logo {
-      font-size: 24px;
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand img {
+      width: 52px;
+      height: 52px;
+      object-fit: contain;
+      border-radius: 10px;
+    }
+
+    .brand-text {
+      font-size: 21px;
       font-weight: 800;
       letter-spacing: -0.5px;
     }
 
-    .logo span {
+    .brand-text span {
       color: #7c5cff;
     }
 
     nav a {
       color: #aaa;
       text-decoration: none;
-      margin-left: 25px;
+      margin-left: 24px;
       font-size: 15px;
       transition: 0.3s;
     }
 
     nav a:hover {
-      color: #ffffff;
+      color: #fff;
     }
-
-    /* HERO */
 
     .hero {
       min-height: 88vh;
       display: flex;
       align-items: center;
       padding: 80px 7%;
-
       background:
         radial-gradient(
           circle at 80% 25%,
-          rgba(124, 92, 255, 0.22),
+          rgba(124,92,255,0.22),
           transparent 30%
         ),
         radial-gradient(
           circle at 15% 75%,
-          rgba(150, 0, 255, 0.12),
+          rgba(0,150,255,0.10),
           transparent 28%
         );
     }
@@ -121,8 +127,6 @@
       margin-bottom: 35px;
     }
 
-    /* BUTTONS */
-
     .btn {
       display: inline-block;
       padding: 14px 24px;
@@ -155,8 +159,6 @@
       transform: translateY(-3px);
     }
 
-    /* SECTIONS */
-
     section {
       padding: 90px 7%;
     }
@@ -171,15 +173,11 @@
       color: #7c5cff;
     }
 
-    /* GRID */
-
     .grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 20px;
     }
-
-    /* CARDS */
 
     .card {
       padding: 30px;
@@ -204,8 +202,6 @@
       margin-bottom: 8px;
     }
 
-    /* PROJECTS */
-
     .projects .card {
       min-height: 230px;
       display: flex;
@@ -215,33 +211,16 @@
     }
 
     .project1 {
-      background:
-        linear-gradient(
-          135deg,
-          #161616,
-          #30216b
-        );
+      background: linear-gradient(135deg,#161616,#30216b);
     }
 
     .project2 {
-      background:
-        linear-gradient(
-          135deg,
-          #161616,
-          #174d42
-        );
+      background: linear-gradient(135deg,#161616,#174d42);
     }
 
     .project3 {
-      background:
-        linear-gradient(
-          135deg,
-          #161616,
-          #642b35
-        );
+      background: linear-gradient(135deg,#161616,#642b35);
     }
-
-    /* PRICING */
 
     .price {
       font-size: 38px;
@@ -273,13 +252,9 @@
       font-weight: bold;
     }
 
-    /* WHY US */
-
     .why {
       background: #0d0d0d;
     }
-
-    /* CONTACT */
 
     .contact {
       text-align: center;
@@ -299,8 +274,6 @@
       font-size: 14px;
     }
 
-    /* FOOTER */
-
     footer {
       padding: 30px 7%;
       text-align: center;
@@ -309,16 +282,23 @@
       font-size: 14px;
     }
 
-    /* MOBILE */
-
     @media (max-width: 800px) {
 
       header {
-        padding: 16px 6%;
+        padding: 12px 6%;
       }
 
       nav {
         display: none;
+      }
+
+      .brand img {
+        width: 45px;
+        height: 45px;
+      }
+
+      .brand-text {
+        font-size: 18px;
       }
 
       .hero {
@@ -358,8 +338,8 @@
         font-size: 43px;
       }
 
-      .logo {
-        font-size: 20px;
+      .brand-text {
+        font-size: 16px;
       }
 
       .btn {
@@ -374,11 +354,17 @@
 <body>
 
   <!-- HEADER -->
-
   <header>
 
-    <div class="logo">
-      Demo <span>Web Studio</span>
+    <div class="brand">
+
+      <!-- LOGO -->
+      <img src="logo.png" alt="Demo Web Studio Logo">
+
+      <div class="brand-text">
+        Demo <span>Web Studio</span>
+      </div>
+
     </div>
 
     <nav>
@@ -392,7 +378,6 @@
 
 
   <!-- HERO -->
-
   <section class="hero">
 
     <div class="hero-content">
@@ -413,15 +398,11 @@
         and growing businesses.
       </p>
 
-      <a
-        href="#contact"
-        class="btn primary">
+      <a href="#contact" class="btn primary">
         Get Your Website
       </a>
 
-      <a
-        href="#projects"
-        class="btn secondary">
+      <a href="#projects" class="btn secondary">
         View Our Work
       </a>
 
@@ -431,7 +412,6 @@
 
 
   <!-- SERVICES -->
-
   <section id="services">
 
     <h2 class="section-title">
@@ -494,7 +474,6 @@
 
 
   <!-- PROJECTS -->
-
   <section id="projects" class="projects">
 
     <h2 class="section-title">
@@ -529,8 +508,7 @@
   </section>
 
 
-  <!-- WHY CHOOSE US -->
-
+  <!-- WHY US -->
   <section class="why">
 
     <h2 class="section-title">
@@ -569,7 +547,6 @@
 
 
   <!-- PRICING -->
-
   <section id="pricing">
 
     <h2 class="section-title">
@@ -579,7 +556,6 @@
     <div class="grid">
 
       <!-- STARTER -->
-
       <div class="card">
 
         <h3>Starter</h3>
@@ -607,7 +583,6 @@
 
 
       <!-- BUSINESS -->
-
       <div class="card popular">
 
         <h3>Business ⭐</h3>
@@ -635,7 +610,6 @@
 
 
       <!-- PREMIUM -->
-
       <div class="card">
 
         <h3>Premium</h3>
@@ -667,7 +641,6 @@
 
 
   <!-- CONTACT -->
-
   <section id="contact" class="contact">
 
     <h2 class="section-title">
@@ -695,12 +668,8 @@
 
 
   <!-- FOOTER -->
-
   <footer>
-
-    © 2026 Demo Web Studio.
-    All Rights Reserved.
-
+    © 2026 Demo Web Studio. All Rights Reserved.
   </footer>
 
 </body>
