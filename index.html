@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Demo Web Studio | Modern Websites</title>
+
+  <meta
+    name="description"
+    content="Demo Web Studio creates modern, fast and mobile-friendly websites for businesses."
+  >
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #080808;
+      color: #ffffff;
+      line-height: 1.6;
+    }
+
+    /* HEADER */
+
+    header {
+      width: 100%;
+      padding: 18px 7%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(8, 8, 8, 0.96);
+      border-bottom: 1px solid #222;
+      backdrop-filter: blur(10px);
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+
+    .logo span {
+      color: #7c5cff;
+    }
+
+    nav a {
+      color: #aaa;
+      text-decoration: none;
+      margin-left: 25px;
+      font-size: 15px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #ffffff;
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 88vh;
+      display: flex;
+      align-items: center;
+      padding: 80px 7%;
+
+      background:
+        radial-gradient(
+          circle at 80% 25%,
+          rgba(124, 92, 255, 0.22),
+          transparent 30%
+        ),
+        radial-gradient(
+          circle at 15% 75%,
+          rgba(150, 0, 255, 0.12),
+          transparent 28%
+        );
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 8px 15px;
+      border: 1px solid #333;
+      border-radius: 30px;
+      color: #aaa;
+      margin-bottom: 25px;
+      font-size: 14px;
+      background: #101010;
+    }
+
+    .hero h1 {
+      font-size: clamp(48px, 8vw, 90px);
+      line-height: 0.98;
+      letter-spacing: -3px;
+      margin-bottom: 28px;
+    }
+
+    .hero h1 span {
+      color: #7c5cff;
+    }
+
+    .hero p {
+      color: #aaa;
+      font-size: 19px;
+      max-width: 680px;
+      margin-bottom: 35px;
+    }
+
+    /* BUTTONS */
+
+    .btn {
+      display: inline-block;
+      padding: 14px 24px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 700;
+      margin-right: 10px;
+      margin-bottom: 10px;
+      transition: 0.3s;
+    }
+
+    .primary {
+      background: #7c5cff;
+      color: white;
+    }
+
+    .primary:hover {
+      transform: translateY(-3px);
+      opacity: 0.9;
+    }
+
+    .secondary {
+      border: 1px solid #333;
+      color: white;
+      background: #101010;
+    }
+
+    .secondary:hover {
+      border-color: #7c5cff;
+      transform: translateY(-3px);
+    }
+
+    /* SECTIONS */
+
+    section {
+      padding: 90px 7%;
+    }
+
+    .section-title {
+      font-size: 42px;
+      margin-bottom: 45px;
+      letter-spacing: -1px;
+    }
+
+    .section-title span {
+      color: #7c5cff;
+    }
+
+    /* GRID */
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+
+    /* CARDS */
+
+    .card {
+      padding: 30px;
+      border: 1px solid #222;
+      border-radius: 18px;
+      background: #101010;
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-7px);
+      border-color: #7c5cff;
+    }
+
+    .card h3 {
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      color: #999;
+      margin-bottom: 8px;
+    }
+
+    /* PROJECTS */
+
+    .projects .card {
+      min-height: 230px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      overflow: hidden;
+    }
+
+    .project1 {
+      background:
+        linear-gradient(
+          135deg,
+          #161616,
+          #30216b
+        );
+    }
+
+    .project2 {
+      background:
+        linear-gradient(
+          135deg,
+          #161616,
+          #174d42
+        );
+    }
+
+    .project3 {
+      background:
+        linear-gradient(
+          135deg,
+          #161616,
+          #642b35
+        );
+    }
+
+    /* PRICING */
+
+    .price {
+      font-size: 38px;
+      font-weight: 800;
+      margin: 15px 0 20px;
+    }
+
+    .price small {
+      font-size: 14px;
+      color: #888;
+      font-weight: normal;
+    }
+
+    .popular {
+      border-color: #7c5cff;
+      position: relative;
+    }
+
+    .popular::before {
+      content: "MOST POPULAR";
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      padding: 5px 9px;
+      border-radius: 20px;
+      background: #7c5cff;
+      color: white;
+      font-size: 9px;
+      font-weight: bold;
+    }
+
+    /* WHY US */
+
+    .why {
+      background: #0d0d0d;
+    }
+
+    /* CONTACT */
+
+    .contact {
+      text-align: center;
+      background: #101010;
+    }
+
+    .contact p {
+      color: #aaa;
+      max-width: 650px;
+      margin: 0 auto 30px;
+      font-size: 17px;
+    }
+
+    .whatsapp-number {
+      color: #777;
+      margin-top: 15px;
+      font-size: 14px;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 30px 7%;
+      text-align: center;
+      color: #777;
+      border-top: 1px solid #222;
+      font-size: 14px;
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+
+      header {
+        padding: 16px 6%;
+      }
+
+      nav {
+        display: none;
+      }
+
+      .hero {
+        min-height: 80vh;
+        padding: 60px 6%;
+      }
+
+      .hero h1 {
+        font-size: 52px;
+        letter-spacing: -2px;
+      }
+
+      .hero p {
+        font-size: 17px;
+      }
+
+      section {
+        padding: 65px 6%;
+      }
+
+      .section-title {
+        font-size: 34px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+
+      .card {
+        padding: 25px;
+      }
+    }
+
+    @media (max-width: 450px) {
+
+      .hero h1 {
+        font-size: 43px;
+      }
+
+      .logo {
+        font-size: 20px;
+      }
+
+      .btn {
+        width: 100%;
+        text-align: center;
+        margin-right: 0;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HEADER -->
+
+  <header>
+
+    <div class="logo">
+      Demo <span>Web Studio</span>
+    </div>
+
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#projects">Projects</a>
+      <a href="#pricing">Pricing</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+  </header>
+
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <div class="badge">
+        🚀 Modern Websites for Modern Businesses
+      </div>
+
+      <h1>
+        We Build
+        <span>Websites</span>
+        That Get Attention.
+      </h1>
+
+      <p>
+        Modern, fast and mobile-friendly websites for
+        restaurants, shops, salons, coaching centres
+        and growing businesses.
+      </p>
+
+      <a
+        href="#contact"
+        class="btn primary">
+        Get Your Website
+      </a>
+
+      <a
+        href="#projects"
+        class="btn secondary">
+        View Our Work
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- SERVICES -->
+
+  <section id="services">
+
+    <h2 class="section-title">
+      Our <span>Services</span>
+    </h2>
+
+    <div class="grid">
+
+      <div class="card">
+        <h3>💼 Business Website</h3>
+        <p>
+          Professional websites that make your
+          business look trustworthy.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>🍔 Restaurant Website</h3>
+        <p>
+          Modern restaurant websites with menu,
+          gallery, location and WhatsApp ordering.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>💇 Salon Website</h3>
+        <p>
+          Elegant salon websites with services,
+          pricing, gallery and appointments.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>📚 Coaching Website</h3>
+        <p>
+          Course information, faculty, admission
+          details and enquiry options.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>🛒 E-commerce Website</h3>
+        <p>
+          Product-focused online stores designed
+          for modern businesses.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>⚡ Website Maintenance</h3>
+        <p>
+          Updates, changes, bug fixes and regular
+          website maintenance.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PROJECTS -->
+
+  <section id="projects" class="projects">
+
+    <h2 class="section-title">
+      Demo <span>Projects</span>
+    </h2>
+
+    <div class="grid">
+
+      <div class="card project1">
+        <h3>🍽️ Restaurant Website</h3>
+        <p>
+          Modern restaurant landing page.
+        </p>
+      </div>
+
+      <div class="card project2">
+        <h3>✨ Salon Website</h3>
+        <p>
+          Elegant salon business website.
+        </p>
+      </div>
+
+      <div class="card project3">
+        <h3>🏢 Business Website</h3>
+        <p>
+          Professional company website.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- WHY CHOOSE US -->
+
+  <section class="why">
+
+    <h2 class="section-title">
+      Why <span>Choose Us?</span>
+    </h2>
+
+    <div class="grid">
+
+      <div class="card">
+        <h3>📱 Mobile Friendly</h3>
+        <p>
+          Your website will work smoothly
+          on phones, tablets and computers.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>⚡ Fast Loading</h3>
+        <p>
+          Clean and lightweight websites
+          designed for fast loading.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>🎨 Modern Design</h3>
+        <p>
+          Clean, professional and modern
+          design to impress your customers.
+        </p>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PRICING -->
+
+  <section id="pricing">
+
+    <h2 class="section-title">
+      Simple <span>Pricing</span>
+    </h2>
+
+    <div class="grid">
+
+      <!-- STARTER -->
+
+      <div class="card">
+
+        <h3>Starter</h3>
+
+        <div class="price">
+          ₹999
+          <small>starting</small>
+        </div>
+
+        <p>✓ 1-page website</p>
+        <p>✓ Mobile responsive</p>
+        <p>✓ WhatsApp button</p>
+        <p>✓ Basic design</p>
+
+        <br>
+
+        <a
+          href="https://wa.me/917501911715?text=Hi%20Demo%20Web%20Studio,%20I%20am%20interested%20in%20the%20Starter%20website."
+          class="btn primary"
+          target="_blank">
+          Choose Plan
+        </a>
+
+      </div>
+
+
+      <!-- BUSINESS -->
+
+      <div class="card popular">
+
+        <h3>Business ⭐</h3>
+
+        <div class="price">
+          ₹2,499
+          <small>starting</small>
+        </div>
+
+        <p>✓ Multi-section website</p>
+        <p>✓ Gallery & services</p>
+        <p>✓ WhatsApp integration</p>
+        <p>✓ Mobile responsive</p>
+
+        <br>
+
+        <a
+          href="https://wa.me/917501911715?text=Hi%20Demo%20Web%20Studio,%20I%20am%20interested%20in%20the%20Business%20website."
+          class="btn primary"
+          target="_blank">
+          Choose Plan
+        </a>
+
+      </div>
+
+
+      <!-- PREMIUM -->
+
+      <div class="card">
+
+        <h3>Premium</h3>
+
+        <div class="price">
+          ₹4,999
+          <small>starting</small>
+        </div>
+
+        <p>✓ Premium design</p>
+        <p>✓ Advanced sections</p>
+        <p>✓ Animations</p>
+        <p>✓ Custom requirements</p>
+
+        <br>
+
+        <a
+          href="https://wa.me/917501911715?text=Hi%20Demo%20Web%20Studio,%20I%20am%20interested%20in%20the%20Premium%20website."
+          class="btn primary"
+          target="_blank">
+          Choose Plan
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACT -->
+
+  <section id="contact" class="contact">
+
+    <h2 class="section-title">
+      Let's Build Your <span>Website</span>
+    </h2>
+
+    <p>
+      Ready to take your business online?
+      Contact Demo Web Studio and let's create
+      something amazing.
+    </p>
+
+    <a
+      href="https://wa.me/917501911715?text=Hi%20Demo%20Web%20Studio,%20I%20want%20to%20build%20a%20website%20for%20my%20business."
+      class="btn primary"
+      target="_blank">
+      💬 Chat on WhatsApp
+    </a>
+
+    <div class="whatsapp-number">
+      WhatsApp: +91 75019 11715
+    </div>
+
+  </section>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    © 2026 Demo Web Studio.
+    All Rights Reserved.
+
+  </footer>
+
+</body>
+</html>
