@@ -694,6 +694,219 @@ footer{
 <footer>
   © 2026 Demo Web Studio • Your Idea • Our Code • Live Online
 </footer>
+<!-- ORDER FORM -->
 
+<div id="orderBox" class="order-overlay">
+
+  <div class="order-form">
+
+    <button class="close-order" onclick="closeOrder()">×</button>
+
+    <h2>Start Your Website 🚀</h2>
+    <p>Tell us what website you need.</p>
+
+    <input id="customerName" type="text"
+           placeholder="Your Name">
+
+    <input id="businessName" type="text"
+           placeholder="Business Name">
+
+    <input id="phoneNumber" type="tel"
+           placeholder="Your Phone Number">
+
+    <select id="websiteType">
+      <option value="">Select Website Type</option>
+      <option>Business Website</option>
+      <option>Restaurant Website</option>
+      <option>Salon Website</option>
+      <option>Coaching Website</option>
+      <option>E-commerce Website</option>
+      <option>Other</option>
+    </select>
+
+    <select id="package">
+      <option value="">Select Package</option>
+      <option>Starter - ₹999</option>
+      <option>Business - ₹2,499</option>
+      <option>Premium - ₹4,999</option>
+    </select>
+
+    <textarea id="requirements"
+      placeholder="Any special requirements?"></textarea>
+
+    <button class="send-order" onclick="sendOrder()">
+      💬 Send Order on WhatsApp
+    </button>
+
+  </div>
+
+</div>
+
+
+<style>
+
+.order-overlay{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.85);
+  z-index:9999;
+  padding:20px;
+  align-items:center;
+  justify-content:center;
+}
+
+.order-form{
+  width:100%;
+  max-width:480px;
+  background:#111217;
+  border:1px solid #30323d;
+  border-radius:22px;
+  padding:28px;
+  position:relative;
+  box-shadow:0 20px 70px rgba(0,0,0,.5);
+}
+
+.order-form h2{
+  font-size:28px;
+  margin-bottom:5px;
+}
+
+.order-form p{
+  color:#999daa;
+  margin-bottom:20px;
+}
+
+.order-form input,
+.order-form select,
+.order-form textarea{
+  width:100%;
+  padding:14px;
+  margin-bottom:12px;
+  border-radius:11px;
+  border:1px solid #30323d;
+  background:#090a0e;
+  color:white;
+  font-size:14px;
+  outline:none;
+}
+
+.order-form textarea{
+  min-height:100px;
+  resize:none;
+}
+
+.order-form input:focus,
+.order-form select:focus,
+.order-form textarea:focus{
+  border-color:#765cff;
+}
+
+.close-order{
+  position:absolute;
+  right:18px;
+  top:14px;
+  border:0;
+  background:none;
+  color:white;
+  font-size:30px;
+  cursor:pointer;
+}
+
+.send-order{
+  width:100%;
+  padding:15px;
+  border:0;
+  border-radius:12px;
+  background:#25D366;
+  color:#071008;
+  font-size:16px;
+  font-weight:800;
+  cursor:pointer;
+}
+
+.send-order:hover{
+  transform:translateY(-2px);
+}
+
+</style>
+
+
+<script>
+
+function openOrder(){
+
+  document.getElementById("orderBox").style.display="flex";
+
+}
+
+function closeOrder(){
+
+  document.getElementById("orderBox").style.display="none";
+
+}
+
+
+function sendOrder(){
+
+  const name =
+    document.getElementById("customerName").value.trim();
+
+  const business =
+    document.getElementById("businessName").value.trim();
+
+  const phone =
+    document.getElementById("phoneNumber").value.trim();
+
+  const website =
+    document.getElementById("websiteType").value;
+
+  const packageName =
+    document.getElementById("package").value;
+
+  const requirements =
+    document.getElementById("requirements").value.trim();
+
+
+  if(!name || !business || !phone || !website || !packageName){
+
+    alert("Please fill all required fields.");
+
+    return;
+
+  }
+
+
+  const message =
+`Hello Demo Web Studio! 🚀
+
+I want to order a website.
+
+👤 Name: ${name}
+
+🏢 Business: ${business}
+
+📱 Phone: ${phone}
+
+🌐 Website Type: ${website}
+
+💰 Package: ${packageName}
+
+📝 Requirements:
+${requirements || "No extra requirements"}
+
+Please contact me regarding my website.`;
+
+
+  const whatsappURL =
+    "https://wa.me/917501911715?text="
+    + encodeURIComponent(message);
+
+
+  window.open(whatsappURL,"_blank");
+
+}
+
+</script>
 </body>
 </html>
